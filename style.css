@@ -5,6 +5,7 @@ body {
 }
 
 header {
+    flex-wrap: wrap;
     height: 100px;
     background-color: #D9D9D9;
     color: black;
@@ -29,7 +30,7 @@ header {
 
 #information-container {
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 27px;
     margin-right: 60px;
     grid-template-columns: 200px 200px 200px 200px 200px 200px 200px;
     grid-template-rows: 55px 55px 55px 55px;  
@@ -37,18 +38,31 @@ header {
 }
 
 .information-paragraph {
+    margin-left: 120px;
     font-size: 25px;
-    grid-column-start: 4;
-    grid-column-end: span 2;
+    grid-column-start: 3;
+    grid-column-end: span 3;
 }
 
 #map {
+    position: fixed;
+    top: 110px;
+    left: 30px;
+    width: 390px;
+    margin-top: 20px;
     background-color:white;
-    grid-column-start: span 2;
-    grid-row-start: span 4;
+    opacity: 0.7;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 33% 33% 33%;
+    height: 200px;
+    z-index: 2;
 }
+
+div #map:hover {
+    opacity: 0;
+}
+
+/* */
 
 .map-template {
     width: 400px;
@@ -58,6 +72,8 @@ header {
 }
 
 .map-img {
+    opacity: 0;
+    margin-left: 20px;
     grid-row-start: 1;
     width: 200px;
     height: 200px;
@@ -73,10 +89,721 @@ header {
     height: 70px;
     grid-column-start: 4;
     grid-row-start: 2;
+    opacity: 0;
+    outline: 2px solid;
 }
 
-body:has(.sweden:hover) #sweden-map {
-    background-color: red;
+#table-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
+
+table {
+    width: 470px;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid;
+}
+
+table:hover {
+    scale: 1.01;
+}
+
+th, td {
+    height: 30px; 
+    border: 2px solid;
+    cursor: default;
+}
+
+tr:nth-child(odd) {
+    background-color: #5e5e5e;
+}
+
+tr:hover {
+    background-color: rgb(181, 0, 0);
+}
+
+th {
+    pointer-events: none;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+body:has(td:hover) #map-content {
+    opacity: 1.0;
+    transition: opacity 0.5s;
+}
+
+body:has(.sweden:hover) img.map-img {
+    content:url(images/swe-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.sweden:hover) img.flag-img {
+    content:url(images/swe-flag.jpg);
+}
+
+body:has(.sweden:hover) .map-header::after {
+    content: "Sverige";
+}
+
+body:has(.albania:hover) img.map-img {
+    content:url(images/albania-map.jpg);
+    width: 100px;
+    opacity: 1.0;
+}
+
+body:has(.albania:hover) img.flag-img {
+    content:url(images/albania-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.albania:hover) .map-header::after {
+    content: "Albanien";
+}
+
+body:has(.andorra:hover) img.map-img {
+    content:url(images/andorra-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.andorra:hover) img.flag-img {
+    content:url(images/andorra-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.andorra:hover) .map-header::after {
+    content: "Andorra";
+}
+
+body:has(.armenia:hover) img.map-img {
+    content:url(images/armenia-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.armenia:hover) img.flag-img {
+    content:url(images/armenia-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.armenia:hover) .map-header::after {
+    content: "Armenien";
+}
+
+body:has(.austria:hover) img.map-img {
+    content:url(images/austria-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.austria:hover) img.flag-img {
+    content:url(images/austria-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.austria:hover) .map-header::after {
+    content: "Österrike";
+}
+
+body:has(.azb:hover) img.map-img {
+    content:url(images/azb-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.azb:hover) img.flag-img {
+    content:url(images/azb-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.azb:hover) .map-header::after {
+    content: "Azerbaijan";
+}
+
+body:has(.belarus:hover) img.map-img {
+    content:url(images/belarus-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.belarus:hover) img.flag-img {
+    content:url(images/belarus-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.belarus:hover) .map-header::after {
+    content: "Belarus";
+}
+
+body:has(.belgium:hover) img.map-img {
+    content:url(images/belgium-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.belgium:hover) img.flag-img {
+    content:url(images/belgium-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.belgium:hover) .map-header::after {
+    content: "Belgien";
+}
+
+body:has(.bosnia-h:hover) img.map-img {
+    content:url(images/bosnia-h-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.bosnia-h:hover) img.flag-img {
+    content:url(images/bosnia-h-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.bosnia-h:hover) .map-header::after {
+    content: "Bosnien Hercegovina";
+}
+
+body:has(.bulgaria:hover) img.map-img {
+    content:url(images/bulgaria-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.bulgaria:hover) img.flag-img {
+    content:url(images/bulgaria-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.bulgaria:hover) .map-header::after {
+    content: "Bulgarien";
+}
+
+body:has(.croatia:hover) img.map-img {
+    content:url(images/croatia-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.croatia:hover) img.flag-img {
+    content:url(images/croatia-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.croatia:hover) .map-header::after {
+    content: "Kroatien";
+}
+
+body:has(.cyprus:hover) img.map-img {
+    content:url(images/cyprus-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.cyprus:hover) img.flag-img {
+    content:url(images/cyprus-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.cyprus:hover) .map-header::after {
+    content: "Cypern";
+}
+
+body:has(.czech:hover) img.map-img {
+    content:url(images/czech-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.czech:hover) img.flag-img {
+    content:url(images/czech-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.czech:hover) .map-header::after {
+    content: "Tjeckien";
+}
+
+body:has(.denmark:hover) img.map-img {
+    content:url(images/denmark-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.denmark:hover) img.flag-img {
+    content:url(images/denmark-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.denmark:hover) .map-header::after {
+    content: "Danmark";
+}
+
+body:has(.germany:hover) img.map-img {
+    content:url(images/germany-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.germany:hover) img.flag-img {
+    content:url(images/germany-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.germany:hover) .map-header::after {
+    content: "Tyskland";
+}
+
+body:has(.estonia:hover) img.map-img {
+    content:url(images/estonia-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.estonia:hover) img.flag-img {
+    content:url(images/estonia-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.estonia:hover) .map-header::after {
+    content: "Estland";
+}
+
+body:has(.finland:hover) img.map-img {
+    content:url(images/finland-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.finland:hover) img.flag-img {
+    content:url(images/finland-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.finland:hover) .map-header::after {
+    content: "Finland";
+}
+
+body:has(.france:hover) img.map-img {
+    content:url(images/france-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.france:hover) img.flag-img {
+    content:url(images/france-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.france:hover) .map-header::after {
+    content: "Frankrike";
+}
+
+body:has(.greece:hover) img.map-img {
+    content:url(images/greece-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.greece:hover) img.flag-img {
+    content:url(images/greece-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.greece:hover) .map-header::after {
+    content: "Grekland";
+}
+
+body:has(.hungary:hover) img.map-img {
+    content:url(images/hungary-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.hungary:hover) img.flag-img {
+    content:url(images/hungary-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.hungary:hover) .map-header::after {
+    content: "Ungern";
+}
+
+body:has(.iceland:hover) img.map-img {
+    content:url(images/iceland-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.iceland:hover) img.flag-img {
+    content:url(images/iceland-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.iceland:hover) .map-header::after {
+    content: "Iceland";
+}
+
+body:has(.ireland:hover) img.map-img {
+    content:url(images/ireland-map.jpg);
+    
+    opacity: 1.0;
+}
+
+body:has(.ireland:hover) img.flag-img {
+    content:url(images/ireland-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.ireland:hover) .map-header::after {
+    content: "Irland";
+}
+
+body:has(.italy:hover) img.map-img {
+    content:url(images/italy-map.jpg);
+    opacity: 1.0;
+    }
+    
+body:has(.italy:hover) img.flag-img {
+content:url(images/italy-flag.jpg);
+opacity: 1.0;
+}
+
+body:has(.italy:hover) .map-header::after {
+content: "Italien";
+}
+
+body:has(.latvia:hover) img.map-img {
+    content:url(images/latvia-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.latvia:hover) img.flag-img {
+    content:url(images/latvia-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.latvia:hover) .map-header::after {
+    content: "Lättland";
+}
+
+body:has(.luxem:hover) img.map-img {
+    content:url(images/luxem-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.luxem:hover) img.flag-img {
+content:url(images/luxem-flag.jpg);
+opacity: 1.0;
+}
+
+body:has(.luxem:hover) .map-header::after {
+content: "Luxemburg";
+}
+
+body:has(.malta:hover) img.map-img {
+    content:url(images/malta-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.malta:hover) img.flag-img {
+    content:url(images/malta-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.malta:hover) .map-header::after {
+    content: "Malta";
+}
+
+body:has(.moldova:hover) img.map-img {
+    content:url(images/moldova-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.moldova:hover) img.flag-img {
+    content:url(images/moldova-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.moldova:hover) .map-header::after {
+    content: "Moldavien";
+}
+
+body:has(.monaco:hover) img.map-img {
+    content:url(images/monaco-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.monaco:hover) img.flag-img {
+    content:url(images/monaco-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.monaco:hover) .map-header::after {
+    content: "Monaco";
+}
+
+body:has(.montenegro:hover) img.map-img {
+    content:url(images/montenegro-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.montenegro:hover) img.flag-img {
+    content:url(images/montenegro-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.montenegro:hover) .map-header::after {
+    content: "Montenegro";
+}
+
+
+body:has(.netherlands:hover) img.map-img {
+    content:url(images/netherlands-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.netherlands:hover) img.flag-img {
+    content:url(images/netherlands-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.netherlands:hover) .map-header::after {
+    content: "Neder-länderna";
+}
+
+body:has(.north-macedonia:hover) img.map-img {
+    content:url(images/north-macedonia-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.north-macedonia:hover) img.flag-img {
+    content:url(images/north-macedonia-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.north-macedonia:hover) .map-header::after {
+    content: "Nord-makedonien";
+}
+
+body:has(.norway:hover) img.map-img {
+    content:url(images/norway-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.norway:hover) img.flag-img {
+    content:url(images/norway-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.norway:hover) .map-header::after {
+    content: "Norge";
+}
+
+body:has(.poland:hover) img.map-img {
+    content:url(images/poland-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.poland:hover) img.flag-img {
+    content:url(images/poland-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.poland:hover) .map-header::after {
+    content: "Polen";
+}
+
+body:has(.portugal:hover) img.map-img {
+    content:url(images/portugal-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.portugal:hover) img.flag-img {
+    content:url(images/portugal-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.portugal:hover) .map-header::after {
+    content: "Portugal";
+}
+
+body:has(.romania:hover) img.map-img {
+    content:url(images/romania-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.romania:hover) img.flag-img {
+    content:url(images/romania-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.romania:hover) .map-header::after {
+    content: "Rumänien";
+}
+
+body:has(.russia:hover) img.map-img {
+    content:url(images/russia-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.russia:hover) img.flag-img {
+    content:url(images/russia-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.russia:hover) .map-header::after {
+    content: "Ryssland";
+}
+
+body:has(.san-marino:hover) img.map-img {
+    content:url(images/san-marino-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.san-marino:hover) img.flag-img {
+    content:url(images/san-marino-flag.jpg);
+    opacity: 1.0;
+}
+    
+    body:has(.san-marino:hover) .map-header::after {
+    content: "San Marino";
+}
+
+body:has(.serbia:hover) img.map-img {
+    content:url(images/serbia-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.serbia:hover) img.flag-img {
+    content:url(images/serbia-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.serbia:hover) .map-header::after {
+    content: "Serbien";
+}
+
+body:has(.slovakia:hover) img.map-img {
+    content:url(images/slovakia-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.slovakia:hover) img.flag-img {
+    content:url(images/slovakia-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.slovakia:hover) .map-header::after {
+    content: "Slovakien";
+}
+
+body:has(.slovenia:hover) img.map-img {
+    content:url(images/slovenia-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.slovenia:hover) img.flag-img {
+    content:url(images/slovenia-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.slovenia:hover) .map-header::after {
+    content: "Slovenien";
+}
+
+body:has(.spain:hover) img.map-img {
+    content:url(images/spain-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.spain:hover) img.flag-img {
+    content:url(images/spain-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.spain:hover) .map-header::after {
+    content: "Spanien";
+}
+
+body:has(.switzerland:hover) img.map-img {
+    content:url(images/switzerland-map.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.switzerland:hover) img.flag-img {
+    content:url(images/switzerland-flag.jpg);
+    opacity: 1.0;
+}
+    
+body:has(.switzerland:hover) .map-header::after {
+    content: "Schweiz";
+}
+
+body:has(.ukraine:hover) img.map-img {
+    content:url(images/ukraine-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.ukraine:hover) img.flag-img {
+    content:url(images/ukraine-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.ukraine:hover) .map-header::after {
+    content: "Ukraina";
+}
+
+body:has(.uk:hover) img.map-img {
+    content:url(images/uk-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.uk:hover) img.flag-img {
+    content:url(images/uk-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.uk:hover) .map-header::after {
+    content: "Stor-brittanien";
+}
+
+body:has(.vatican:hover) img.map-img {
+    content:url(images/vatican-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.vatican:hover) img.flag-img {
+    content:url(images/vatican-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.vatican:hover) .map-header::after {
+    content: "Vatikan-staten";
+}
+
+body:has(.turkey:hover) img.map-img {
+    content:url(images/turkey-map.jpg);
+    opacity: 1.0;
+}
+
+body:has(.turkey:hover) img.flag-img {
+    content:url(images/turkey-flag.jpg);
+    opacity: 1.0;
+}
+
+body:has(.turkey:hover) .map-header::after {
+    content: "Turkiet";
+}
+
+
+
+    
+    
+    
 

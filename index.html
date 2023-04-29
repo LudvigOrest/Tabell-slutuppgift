@@ -1,40 +1,447 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="images/logo.jpg">
+        <title>Europa-statistik</title>
     </head>
     <body>
         <header class="flexbox">
             <h1 id="headline"><bold>Tabell över Europas länder</bold></h1>
         </header>
+
         <div id="information-container" class="grid">
-            <div id="map" class="grid">
-                <div class="grid map-template" id="sweden-map">
-                    <img src="images/swe-map.jpg" class="map-img">
-                    <h2 class="map-header">Sverige</h2>
-                    <img src="images/swe-flag.jpg" class="flag-img">
+            <div id="map">
+                <div class="grid map-template hidden" id="map-content">
+                    <img class="map-img">
+                    <h2 class="map-header"></h2>
+                    <img class="flag-img" id="map-content">
                 </div>
             </div>
-            <p class="information-paragraph">En tabell över staterna i Europa. Klicka på en tabell för att visa landsgränserna och flaggan.</p>
+            <p class="information-paragraph">Här finner du en tabell över staterna i Europa. Håll musen över 
+                en tabell för att visa landsgränserna och flaggan. Observera att landsgränserna inte är skalenliga.
+            </p>
         </div>
+
         <main>
-            <table>
-                <tr>
-                    <th>Land</th>
-                    <th>Landskod</th>
-                    <th>Officielt språk</th>
-                    <th>Yta</th>
-                    <th>Befolkningstäthet</th>
-                    <th>Antal invånare</th>
-                </tr>
-                <tr>
-                    <td>Sverige</td>
-                    <td>SE</td>
-                    <td>Svenska</td>
-                    <td>447 425 km²</td>
-                    <td>23,5 invånare/km²</td>
-                    <td>10,5 miljoner</td>
-                </tr>
-            </table>
+            <div id="table-container" class="flexbox">
+                <table>
+                    <tr>
+                        <th>Land</th>
+                        <th>Landskod</th>
+                        <th>Språk</th>
+                        <th>Yta</th>
+                        <th>Invånare/km²</th>
+                        <th>Invånare</th>
+                    </tr>
+                    <tr>
+                        <td class="albania">Albanien</td>
+                        <td class="albania">--</td>
+                        <td class="albania">Albanska</td>
+                        <td class="albania">----- km²</td>
+                        <td class="albania">---- pers</td>
+                        <td class="albania">---- mil</td>
+                    </tr>
+                    <tr>
+                        <td class="andorra">Andorra</td>
+                        <td class="andorra">--</td>
+                        <td class="andorra">----ska</td>
+                        <td class="andorra">----- km²</td>
+                        <td class="andorra">---- pers</td>
+                        <td class="andorra">---- mil</td>
+                    </tr>
+                    <tr>
+                        <td class="austria">Österrike</td>
+                        <td class="austria">AT</td>
+                        <td class="austria">Tyska</td>
+                        <td class="austria">83 879 km²</td>
+                        <td class="austria">104 pers/km²</td>
+                        <td class="austria">8,9 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="azb">Azerbaijan</td>
+                        <td class="azb">X1</td>
+                        <td class="azb">X2</td>
+                        <td class="azb">X3 km²</td>
+                        <td class="azb">X4 pers/km²</td>
+                        <td class="azb">X5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="belarus">Belarus</td>
+                        <td class="belarus">BY</td>
+                        <td class="belarus">Vitryska, Ryska</td>
+                        <td class="belarus">207 595 km²</td>
+                        <td class="belarus">47 pers/km²</td>
+                        <td class="belarus">9,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="belgium">Belgien</td>
+                        <td class="belgium">BE</td>
+                        <td class="belgium">Nederländska, Franska, Tyska</td>
+                        <td class="belgium">30 528 km²</td>
+                        <td class="belgium">379 pers/km²</td>
+                        <td class="belgium">11,6 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="bosnia-h">Bosnien och Hercegovina</td>
+                        <td class="bosnia-h">BA</td>
+                        <td class="bosnia-h">Bosniska, Kroatiska, Serbiska</td>
+                        <td class="bosnia-h">51 209 km²</td>
+                        <td class="bosnia-h">64 pers/km²</td>
+                        <td class="bosnia-h">3,3 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="bulgaria">Bulgarien</td>
+                        <td class="bulgaria">BG</td>
+                        <td class="bulgaria">Bulgariska</td>
+                        <td class="bulgaria">110 994 km²</td>
+                        <td class="bulgaria">64 pers/km²</td>
+                        <td class="bulgaria">6,9 mil</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Land</th>
+                        <th>Landskod</th>
+                        <th>Språk</th>
+                        <th>Yta</th>
+                        <th>Invånare/km²</th>
+                        <th>Invånare</th>
+                    </tr>
+                    <tr>
+                        <td class="croatia">Kroatien</td>
+                        <td class="croatia">HR</td>
+                        <td class="croatia">Kroatiska</td>
+                        <td class="croatia">56 594 km²</td>
+                        <td class="croatia">73 pers/km²</td>
+                        <td class="croatia">4,1 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="cyprus">Cypern</td>
+                        <td class="cyprus">CY</td>
+                        <td class="cyprus">Grekiska, Turkiska</td>
+                        <td class="cyprus">9 251 km²</td>
+                        <td class="cyprus">131 pers/km²</td>
+                        <td class="cyprus">1,2 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="czech">Tjeckien</td>
+                        <td class="czech">CZ</td>
+                        <td class="czech">Tjeckiska</td>
+                        <td class="czech">78 866 km²</td>
+                        <td class="czech">136 pers/km²</td>
+                        <td class="czech">10,7 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="denmark">Danmark</td>
+                        <td class="denmark">DK</td>
+                        <td class="denmark">Danska</td>
+                        <td class="denmark">42 933 km²</td>
+                        <td class="denmark">137 pers/km²</td>
+                        <td class="denmark">5,8 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="germany">Tyskland</td>
+                        <td class="germany">DE</td>
+                        <td class="germany">Tyska</td>
+                        <td class="germany">357 581 km²</td>
+                        <td class="germany">237 pers/km²</td>
+                        <td class="germany">83,1 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="estonia">Estland</td>
+                        <td class="estonia">EE</td>
+                        <td class="estonia">Estniska</td>
+                        <td class="estonia">45 227 km²</td>
+                        <td class="estonia">30 pers/km²</td>
+                        <td class="estonia">1,3 mil</td>  
+                    </tr>
+                    <tr>
+                        <td class="finland">Finland</td>
+                        <td class="finland">FI</td>
+                        <td class="finland">Finska</td>
+                        <td class="finland">338 424 km²</td>
+                        <td class="finland">18 pers/km²</td>
+                        <td class="finland">5,5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="france">Frankrike</td>
+                        <td class="france">FR</td>
+                        <td class="france">Franska</td>
+                        <td class="france">643 801 km²</td>
+                        <td class="france">123 pers/km²</td>
+                        <td class="france">67,4 mil</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Land</th>
+                        <th>Landskod</th>
+                        <th>Språk</th>
+                        <th>Yta</th>
+                        <th>Invånare/km²</th>
+                        <th>Invånare</th>
+                    </tr>
+                    <tr>
+                        <td class="greece">Grekland</td>
+                        <td class="greece">GR</td>
+                        <td class="greece">Grekiska</td>
+                        <td class="greece">131 957 km²</td>
+                        <td class="greece">81 pers/km²</td>
+                        <td class="greece">10,7 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="hungary">Ungern</td>
+                        <td class="hungary">HU</td>
+                        <td class="hungary">Ungerska</td>
+                        <td class="hungary">93 030 km²</td>
+                        <td class="hungary">106 pers/km²</td>
+                        <td class="hungary">9,8 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="iceland">Island</td>
+                        <td class="iceland">IS</td>
+                        <td class="iceland">Isländska</td>
+                        <td class="iceland">102 775 km²</td>
+                        <td class="iceland">3 pers/km²</td>
+                        <td class="iceland">0,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="ireland">Irland</td>
+                        <td class="ireland">IE</td>
+                        <td class="ireland">Irländska, engelska</td>
+                        <td class="ireland">70 273 km²</td>
+                        <td class="ireland">69 pers/km²</td>
+                        <td class="ireland">4,9 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="italy">Italien</td>
+                        <td class="italy">IT</td>
+                        <td class="italy">Italienska</td>
+                        <td class="italy">301 340 km²</td>
+                        <td class="italy">201 pers/km²</td>
+                        <td class="italy">60,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="latvia">Lättland</td>
+                        <td class="latvia">LV</td>
+                        <td class="latvia">Lettiska</td>
+                        <td class="latvia">64 589 km²</td>
+                        <td class="latvia">30 pers/km²</td>
+                        <td class="latvia">1,9 mil </td>
+                    </tr>
+                    <tr>
+                        <td class="luxem">Luxemburg</td>
+                        <td class="luxem">LU</td>
+                        <td class="luxem">Luxembourgish, French, German</td>
+                        <td class="luxem">2,586 km²</td>
+                        <td class="luxem">200 pers/km²</td>
+                        <td class="luxem">0.6 mil</td>
+                    </tr>
+                </table>
+                <div id="map" class="grid">
+                    <div class="grid map-template hidden" id="map-content">
+                        <img class="map-img">
+                        <h2 class="map-header"></h2>
+                        <img class="flag-img" id="map-content">
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Land</th>
+                        <th>Landskod</th>
+                        <th>Språk</th>
+                        <th>Yta</th>
+                        <th>Invånare/km²</th>
+                        <th>Invånare</th>
+                    </tr>
+                    <tr>
+                        <td class="malta">Malta</td>
+                        <td class="malta">MT</td>
+                        <td class="malta">Maltesiska, Engelska</td>
+                        <td class="malta">316 km²</td>
+                        <td class="malta">1 500 pers/km²</td>
+                        <td class="malta">0,5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="moldova">Moldavien</td>
+                        <td class="moldova">MD</td>
+                        <td class="moldova">Moldaviska, Rumänska, Ryska</td>
+                        <td class="moldova">33 851 km²</td>
+                        <td class="moldova">120 pers/km²</td>
+                        <td class="moldova">2,6 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="monaco">Monaco</td>
+                        <td class="monaco">MC</td>
+                        <td class="monaco">Franska</td>
+                        <td class="monaco">2,02 km²</td>
+                        <td class="monaco">19 000 pers/km²</td>
+                        <td class="monaco">0,04 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="montenegro">Montenegro</td>
+                        <td class="montenegro">ME</td>
+                        <td class="montenegro">Montenegrinska, Serbiska, Bosniska, Albanska, Kroatska</td>
+                        <td class="montenegro">13 812 km²</td>
+                        <td class="montenegro">50 pers/km²</td>
+                        <td class="montenegro">0,62 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="netherlands">Nederländerna</td>
+                        <td class="netherlands">NL</td>
+                        <td class="netherlands">Nederländska</td>
+                        <td class="netherlands">41 543 km²</td>
+                        <td class="netherlands">500 pers/km²</td>
+                        <td class="netherlands">17,5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="north-macedonia">Nord-makedonien</td>
+                        <td class="north-macedonia">MK</td>
+                        <td class="north-macedonia">Makedonska, Albanska</td>
+                        <td class="north-macedonia">25 713 km²</td>
+                        <td class="north-macedonia">80 pers/km²</td>
+                        <td class="north-macedonia">2,1 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="norway">Norge</td>
+                        <td class="norway">NO</td>
+                        <td class="norway">Norska</td>
+                        <td class="norway">385 207 km²</td>
+                        <td class="norway">16,5 pers/km²</td>
+                        <td class="norway">5,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="poland">Polen</td>
+                        <td class="poland">PL</td>
+                        <td class="poland">Polska</td>
+                        <td class="poland">312 696 km²</td>
+                        <td class="poland">123 pers/km²</td>
+                        <td class="poland">38.4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="portugal">Portugal</td>
+                        <td class="portugal">PT</td>
+                        <td class="portugal">Portugisiska</td>
+                        <td class="portugal">92,212 km²</td>
+                        <td class="portugal">111 pers/km²</td>
+                        <td class="portugal">10.3 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="romania">Rumänien</td>
+                        <td class="romania">RO</td>
+                        <td class="romania">Rumänska</td>
+                        <td class="romania">238,391 km²</td>
+                        <td class="romania">84 pers/km²</td>
+                        <td class="romania">19.5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="russia">Ryssland</td>
+                        <td class="russia">RU</td>
+                        <td class="russia">Ryska</td>
+                        <td class="russia">17,098,242 km²</td>
+                        <td class="russia">9 pers/km²</td>
+                        <td class="russia">144.5 mil</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Land</th>
+                        <th>Landskod</th>
+                        <th>Språk</th>
+                        <th>Yta</th>
+                        <th>Invånare/km²</th>
+                        <th>Invånare</th>
+                    </tr>
+                    <tr>
+                        <td class="san-marino">San Marino</td>
+                        <td class="san-marino">SM</td>
+                        <td class="san-marino">Italienska</td>
+                        <td class="san-marino">61 km²</td>
+                        <td class="san-marino">532 pers/km²</td>
+                        <td class="san-marino">0,03 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="serbia">Serbien</td>
+                        <td class="serbia">RS</td>
+                        <td class="serbia">Serbiska</td>
+                        <td class="serbia">77 474 km²</td>
+                        <td class="serbia">93 pers/km²</td>
+                        <td class="serbia">6,9 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="slovakia">Slovakien</td>
+                        <td class="slovakia">SK</td>
+                        <td class="slovakia">Slovakiska</td>
+                        <td class="slovakia">49 037 km²</td>
+                        <td class="slovakia">113 pers/km²</td>
+                        <td class="slovakia">5,5 mil</td>
+                    </tr>  
+                    <tr>
+                        <td class="slovenia">Slovenien</td>
+                        <td class="slovenia">SI</td>
+                        <td class="slovenia">Slovenska</td>
+                        <td class="slovenia">20 273 km²</td>
+                        <td class="slovenia">103 pers/km²</td>
+                        <td class="slovenia">2,1 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="spain">Spanien</td>
+                        <td class="spain">ES</td>
+                        <td class="spain">Spanska</td>
+                        <td class="spain">505 990 km²</td>
+                        <td class="spain">93 pers/km²</td>
+                        <td class="spain">47,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="sweden">Sverige</td>
+                        <td class="sweden">SE</td>
+                        <td class="sweden">Svenska</td>
+                        <td class="sweden">450 295 km²</td>
+                        <td class="sweden">24,3 pers/km²</td>
+                        <td class="sweden">10,4 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="switzerland">Schweiz</td>
+                        <td class="switzerland">CH</td>
+                        <td class="switzerland">Tyska, Franska, Italienska, Rätoromanska</td>
+                        <td class="switzerland">41 290 km²</td>
+                        <td class="switzerland">219 pers/km²</td>
+                        <td class="switzerland">8,5 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="ukraine">Ukraina</td>
+                        <td class="ukraine">UA</td>
+                        <td class="ukraine">Ukrainska</td>
+                        <td class="ukraine">603,628 km²</td>
+                        <td class="ukraine">77 pers/km²</td>
+                        <td class="ukraine">44.8 mil</td>
+                    </tr>
+                    <tr>
+                        <td class="uk">Storbrittanien</td>
+                        <td class="uk">GB</td>
+                        <td class="uk">Engelska</td>
+                        <td class="uk">242,910 km²</td>
+                        <td class="uk">281 pers/km²</td>
+                        <td class="uk">66.8 mil</td> 
+                    </tr>
+                    <tr>
+                        <td class="vatican">Vatikanstaden</td>
+                        <td class="vatican">VA</td>
+                        <td class="vatican">Itaienska</td>
+                        <td class="vatican">0.44 km²</td>
+                        <td class="vatican">4,545 pers/km²</td>
+                        <td class="vatican">0.8 tusen</td>
+                    </tr>
+                    <tr>
+                        <td class="turkey">Turkiet</td>
+                        <td class="turkey">TR</td>
+                        <td class="turkey">Turkiska</td>
+                        <td class="turkey">783,356 km²</td>
+                        <td class="turkey">108 pers/km²</td>
+                        <td class="turkey">84.3 mil</td>
+                    </tr>
+                </table>
+            </div>
         </main>
     </body>
 </html>
