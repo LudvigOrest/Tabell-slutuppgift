@@ -96,7 +96,7 @@ div #map:hover {
 #table-container {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
 }
 
@@ -115,13 +115,14 @@ table:hover {
 }
 
 th, td {
-    height: 30px; 
+    height: 30px;
+    width: 150px; 
     border: 2px solid;
     cursor: default;
 }
 
 tr:nth-child(odd) {
-    background-color: #5e5e5e;
+    background-color: #767676;
 }
 
 tr:hover {
@@ -227,7 +228,7 @@ body:has(.azb:hover) img.flag-img {
 }
 
 body:has(.azb:hover) .map-header::after {
-    content: "Azerbaijan";
+    content: "Azerbajdzjan";
 }
 
 body:has(.belarus:hover) img.map-img {
@@ -799,6 +800,32 @@ body:has(.turkey:hover) img.flag-img {
 
 body:has(.turkey:hover) .map-header::after {
     content: "Turkiet";
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-color: darkblue;
+    }
+
+    .information-paragraph {
+        margin-left: 0px;
+        font-size: 25px;
+        grid-column-start: 3;
+        grid-column-end: span 3;
+        font-size: 21px;
+        width: 250px;
+    }
+
+    table {
+        width: 80%;
+        margin-top: 15px;
+        font-size: 14px;
+        text-align: center;
+        border-collapse: collapse;
+        border: 2px solid;
+    }
+
+
 }
 
 
